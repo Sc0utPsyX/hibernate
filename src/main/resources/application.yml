@@ -1,0 +1,22 @@
+server:
+  port: 8190
+  servlet:
+    context-path: /app
+
+spring:
+  jackson:
+    serialization:
+      indent_output: true
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+      javax:
+        persistence:
+          schema-generation:
+            create-source: metadata
+            scripts:
+              action: create
+              create-target: create.sql
+    generate-ddl: true
